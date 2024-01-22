@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
     font-size: 1rem;
     font-weight: 300;
-    color: #fff;
+    color: #000;
     line-height: 1.5;
     
   }
@@ -30,6 +30,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

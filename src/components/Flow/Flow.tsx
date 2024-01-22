@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import ReactFlow, {
   Controls,
   Background,
@@ -22,6 +22,12 @@ export const Flow = () => {
   const [nodes, , onNodesChange] = useNodesState(mockNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(mockEdges)
 
+  useEffect(
+    () => updateSidebarId(mockNodes[0].id),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges(eds => addEdge(params, eds)),
     [setEdges],
@@ -44,7 +50,7 @@ export const Flow = () => {
         onConnect={onConnect}
       >
         <Controls />
-        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+        <Background variant={BackgroundVariant.Lines} gap={12} size={1} />
       </ReactFlow>
     </Container>
   )

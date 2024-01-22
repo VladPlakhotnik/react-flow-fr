@@ -1,12 +1,10 @@
 import { RiAccountCircleLine, RiBankLine } from 'react-icons/ri'
 import type { Node } from 'reactflow'
 import { Position } from 'reactflow'
+import { RoundBackground, CompanyName } from '../components/Flow/Flow.styles'
 
 const nodeStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  border: '1px solid blue',
+  border: '2px solid blue',
   borderRadius: '50px',
   width: '60px',
   height: '60px',
@@ -21,9 +19,10 @@ export const mockNodes: Node[] = [
     },
     data: {
       label: (
-        <div>
-          <RiBankLine style={{ scale: '4' }} />
-        </div>
+        <RoundBackground>
+          <RiBankLine style={{ scale: '3' }} />
+          <CompanyName>Wavestone</CompanyName>
+        </RoundBackground>
       ),
     },
     style: nodeStyle,
@@ -33,14 +32,15 @@ export const mockNodes: Node[] = [
   {
     id: 'a_id',
     position: {
-      x: 400,
-      y: 200,
+      x: 300,
+      y: 300,
     },
     data: {
       label: (
-        <div>
-          <RiAccountCircleLine style={{ scale: '4' }} />
-        </div>
+        <RoundBackground>
+          <RiAccountCircleLine style={{ scale: '3' }} />
+          <CompanyName>A...</CompanyName>
+        </RoundBackground>
       ),
     },
     style: nodeStyle,
@@ -50,14 +50,15 @@ export const mockNodes: Node[] = [
   {
     id: 'b_id',
     position: {
-      x: 800,
-      y: 200,
+      x: 900,
+      y: 300,
     },
     data: {
       label: (
-        <div>
-          <RiAccountCircleLine style={{ scale: '4' }} />
-        </div>
+        <RoundBackground>
+          <RiAccountCircleLine style={{ scale: '3' }} />
+          <CompanyName>B...</CompanyName>
+        </RoundBackground>
       ),
     },
     style: nodeStyle,
@@ -72,9 +73,10 @@ export const mockNodes: Node[] = [
     },
     data: {
       label: (
-        <div>
-          <RiAccountCircleLine style={{ scale: '4' }} />
-        </div>
+        <RoundBackground>
+          <RiAccountCircleLine style={{ scale: '3' }} />
+          <CompanyName>C...</CompanyName>
+        </RoundBackground>
       ),
     },
     style: nodeStyle,
@@ -89,9 +91,10 @@ export const mockNodes: Node[] = [
     },
     data: {
       label: (
-        <div>
-          <RiAccountCircleLine style={{ scale: '4' }} />
-        </div>
+        <RoundBackground>
+          <RiAccountCircleLine style={{ scale: '3' }} />
+          <CompanyName>D...</CompanyName>
+        </RoundBackground>
       ),
     },
     style: nodeStyle,

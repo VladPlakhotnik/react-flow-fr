@@ -1,9 +1,9 @@
-import { Container } from "./Header.styles";
+import { Container } from './Header.styles'
 
 export const Header = () => {
   return (
     <Container>
-      <p>Header</p>
+      <h1>Header</h1>
     </Container>
-  );
-};
+  )
+}
