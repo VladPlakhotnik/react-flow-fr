@@ -25,4 +25,16 @@ export const mockEdges: Edge[] = [
     target: 'd_id',
     label: 'Administrateur',
   },
+  {
+    id: 'd_id-d_a_id',
+    source: 'd_id',
+    target: 'd_a_id',
+    label: 'Administrateur',
+  },
+  {
+    id: 'd_id-d_b_id',
+    source: 'd_id',
+    target: 'd_b_id',
+    label: 'Administrateur',
+  },
 ]

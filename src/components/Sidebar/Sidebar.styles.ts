@@ -12,12 +12,32 @@ export const Box = styled.div`
   flex-direction: column;
   align-items: center;
 `
-export const Address = styled.div`
+export const Notification = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 2rem;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #005eff;
   color: #fff;
+  height: 250px;
+`
+export const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+`
+export const BoxButtons = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
+export const Button = styled.button`
+  border: 0;
+  padding: 0.5rem 1rem;
 `

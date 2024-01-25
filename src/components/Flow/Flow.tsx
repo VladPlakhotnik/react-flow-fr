@@ -1,8 +1,6 @@
 import { useCallback, useEffect } from 'react'
 import ReactFlow, {
-  Controls,
   Background,
-  useNodesState,
   useEdgesState,
   addEdge,
   Connection,
@@ -14,16 +12,19 @@ import { useEdges, useNodes } from '../../api/settings.api'
 import 'reactflow/dist/style.css'
 import { Container } from './Flow.styles'
 import { useSettings } from '../../atoms/settingsAtom'
+import { useLevelNodes } from '../../utilities/mockNodes'
 
 export const Flow = () => {
-  const { updateSidebarId } = useSettings()
-  const mockNodes = useNodes()
+  const { settings, updateSidebarId } = useSettings()
+  const data = useNodes()
+  const nodes = useLevelNodes(settings.sidebarId)
   const mockEdges = useEdges()
-  const [nodes, , onNodesChange] = useNodesState(mockNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(mockEdges)
 
+  console.log(nodes)
+
   useEffect(
-    () => updateSidebarId(mockNodes[0].id),
+    () => updateSidebarId(data[0].id),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   )
@@ -34,9 +35,9 @@ export const Flow = () => {
   )
 
   const handleUpdateNode = (changes: NodeChange[]) => {
-    if (changes[0].type === 'position') {
-      onNodesChange(changes)
-      updateSidebarId(changes[0].id)
+    if (changes[0].type === 'select') {
+      const id = changes[0].id
+      updateSidebarId(id)
     }
   }
 
@@ -49,7 +50,6 @@ export const Flow = () => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
       >
-        <Controls />
         <Background variant={BackgroundVariant.Lines} gap={12} size={1} />
       </ReactFlow>
     </Container>
