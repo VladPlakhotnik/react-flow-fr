@@ -22,7 +22,7 @@ export const Notification = styled.div`
   border-radius: 10px;
   background-color: #005eff;
   color: #fff;
-  height: 250px;
+  height: 300px;
 `
 export const Icon = styled.div`
   display: flex;
@@ -36,8 +36,10 @@ export const Icon = styled.div`
 export const BoxButtons = styled.div`
   display: flex;
   justify-content: space-around;
+  width: 100%;
 `
 export const Button = styled.button`
   border: 0;
   padding: 0.5rem 1rem;
+  border-radius: 10px;
 `

@@ -7,7 +7,7 @@ export interface SettingsType {
 const settingsDefaultState = atom<SettingsType>({
   key: 'settings',
   default: {
-    sidebarId: '',
+    sidebarId: 'wavestone_id',
   },
 })
 

@@ -20,6 +20,18 @@ interface CustomNodeProps {
   }
 }
 
+const getPositionForZeroLevel = (index: number) => {
+  if (index > 4) return { x: 300 + (index - 5) * 150, y: 600 }
+  return { x: 300 + index * 150, y: 300 }
+}
+
+const getPositionForFirstLevel = (index: number) => {
+  if (index <= 1) return { x: 300 + index * 600, y: 400 }
+  if (index === 2) return { x: 400, y: 600 }
+  if (index === 3) return { x: 800, y: 600 }
+  return { x: 300 + index * 600, y: 400 }
+}
+
 const getCustomNode = (props: CustomNodeProps) => {
   const { id, type, label, position } = props
 
@@ -55,7 +67,7 @@ export const useLevelNodes = (id: string): Node[] => {
             id: b.id,
             type: b.subNodes !== null ? 'nested' : 'single',
             label: b.label,
-            position: { x: 600, y: 400 },
+            position: { x: 600, y: 300 },
           }),
         )
 
@@ -65,7 +77,7 @@ export const useLevelNodes = (id: string): Node[] => {
               id: c.id,
               type: c.subNodes !== null ? 'nested' : 'single',
               label: c.label,
-              position: { x: 300 + idx * 200, y: 700 },
+              position: getPositionForFirstLevel(idx),
             }),
           )
         })
@@ -77,7 +89,7 @@ export const useLevelNodes = (id: string): Node[] => {
             id: b.id,
             type: b.subNodes !== null ? 'nested' : 'single',
             label: b.label,
-            position: { x: 300 + index * 200, y: 700 },
+            position: getPositionForZeroLevel(index),
           }),
         )
       }

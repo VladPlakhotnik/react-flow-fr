@@ -19,10 +19,10 @@ export const CompanyName = styled.div`
 
 export const ShadowButon = styled.div`
   position: absolute;
-  left: 50px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
+  left: 40px;
+  bottom: 50px;
+  background-color: blue;
+  border-radius: 20px;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
 `

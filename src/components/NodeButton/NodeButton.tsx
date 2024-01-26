@@ -20,7 +20,7 @@ export const NodeButton: React.FC<NodeButtonProps> = ({ type, label }) => {
         </RoundBackground>
       ) : (
         <RoundBackground>
-          <ShadowButon>..</ShadowButon>
+          <ShadowButon>many</ShadowButon>
           <RiAccountCircleLine style={{ scale: '3' }} />
           <CompanyName>{label} ...</CompanyName>
         </RoundBackground>
