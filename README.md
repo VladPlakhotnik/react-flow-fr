@@ -2,9 +2,13 @@
 
 A content block that allows the user to see the contrast ratio between two brand colors and learn the WCAG compliance level.
 
-## Main
+## Level 0
 
-![Screenshot](https://snipboard.io/6y34w1.jpg)
+![Screenshot](https://snipboard.io/pY5Grz.jpg)
+
+## Level 1
+
+![Screenshot](https://snipboard.io/5NjAWv.jpg)
 
 ## Tech stack
 

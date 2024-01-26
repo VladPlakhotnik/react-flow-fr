@@ -8,7 +8,7 @@ import ReactFlow, {
   BackgroundVariant,
   NodeChange,
 } from 'reactflow'
-import { useEdges } from '../../api/settings.api'
+import { type INodes, useEdges, useNodes } from '../../api/settings.api'
 import 'reactflow/dist/style.css'
 import { Container } from './Flow.styles'
 import { useSettings } from '../../atoms/settingsAtom'
@@ -17,21 +17,19 @@ import { useLevelNodes } from '../../utilities/mockNodes'
 export const Flow = () => {
   const { settings, updateSidebarId } = useSettings()
   const nodes = useLevelNodes(settings.sidebarId)
+  const data = useNodes()
   const [edges, setEdges] = useEdgesState(useEdges())
 
-  const level1 = [
-    'wavestone_id',
-    'a_id',
-    'b_id',
-    'c_id',
-    'd_id',
-    'e_id',
-    'j_id',
-    'q_id',
-    'l_id',
-    'k_id',
-    'h_id',
-  ]
+  const extractTopLevelIds = (nodes: INodes[]) =>
+    nodes.reduce((acc, node) => {
+      acc.push(node.id)
+      if (node.subNodes) {
+        acc.push(...node.subNodes.map(subNode => subNode.id))
+      }
+      return acc
+    }, [] as string[])
+
+  const LEVEL_1 = extractTopLevelIds(data)
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges(eds => addEdge(params, eds)),
@@ -41,7 +39,7 @@ export const Flow = () => {
   const handleUpdateNode = (changes: NodeChange[]) => {
     if (changes[0].type === 'select') {
       const id = changes[0].id
-      if (level1.some(nodeId => nodeId === id)) updateSidebarId(id)
+      if (LEVEL_1.some(nodeId => nodeId === id)) updateSidebarId(id)
     }
   }
 

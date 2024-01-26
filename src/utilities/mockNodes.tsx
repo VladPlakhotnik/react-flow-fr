@@ -1,5 +1,4 @@
 import type { Node } from 'reactflow'
-import { Position } from 'reactflow'
 import { NodeButton } from '../components/NodeButton/NodeButton'
 import { useNodes } from '../api/settings.api'
 
@@ -38,7 +37,6 @@ const getCustomNode = (props: CustomNodeProps) => {
   return {
     id,
     position,
-    // type,
     data: {
       label: <NodeButton type={type} label={label} />,
     },
@@ -98,71 +96,3 @@ export const useLevelNodes = (id: string): Node[] => {
 
   return nodesTest
 }
-
-export const mockNodes: Node[] = [
-  {
-    id: 'wavestone_id',
-    position: {
-      x: 600,
-      y: 100,
-    },
-    data: {
-      label: <NodeButton />,
-    },
-    style: nodeStyle,
-    type: 'input',
-    targetPosition: Position.Bottom,
-  },
-  {
-    id: 'a_id',
-    position: {
-      x: 300,
-      y: 300,
-    },
-    data: {
-      label: <NodeButton />,
-    },
-    style: nodeStyle,
-    type: 'output',
-    targetPosition: Position.Right,
-  },
-  {
-    id: 'b_id',
-    position: {
-      x: 900,
-      y: 300,
-    },
-    data: {
-      label: <NodeButton />,
-    },
-    style: nodeStyle,
-    type: 'output',
-    targetPosition: Position.Left,
-  },
-  {
-    id: 'c_id',
-    position: {
-      x: 400,
-      y: 600,
-    },
-    data: {
-      label: <NodeButton />,
-    },
-    style: nodeStyle,
-    type: 'output',
-    targetPosition: Position.Top,
-  },
-  {
-    id: 'd_id',
-    position: {
-      x: 800,
-      y: 600,
-    },
-    data: {
-      label: <NodeButton />,
-    },
-    style: nodeStyle,
-    type: 'output',
-    targetPosition: Position.Top,
-  },
-]
