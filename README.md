@@ -1,6 +1,10 @@
 # React Flow
 
-A content block that allows the user to see the contrast ratio between two brand colors and learn the WCAG compliance level.
+A project is defined by a node on the graph.
+Each project can interact with other projects. On the diagram, this is represented by a graph
+edge or a link between a project A and a project B
+
+Describing video: [Google Drive](https://drive.google.com/file/d/1BUAYvzzvISdafgstxRY6MAr-fvmJYL0f/view?usp=sharing)
 
 ## Level 0
 
