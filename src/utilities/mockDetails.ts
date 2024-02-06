@@ -1,7 +1,7 @@
 export const mockDetails = [
   {
     id: 'wavestone_id',
-    title: 'Wavestone',
+    title: 'Authentikator',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     phone: '+0 4832 4423',
