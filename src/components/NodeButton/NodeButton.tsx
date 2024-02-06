@@ -11,7 +11,7 @@ export const NodeButton: React.FC<NodeButtonProps> = ({ type, label }) => {
     <>
       {type === 'single' ? (
         <RoundBackground>
-          {label === 'Wavestone' ? (
+          {label === 'Authentikator' ? (
             <RiBankLine style={{ scale: '3' }} />
           ) : (
             <RiAccountCircleLine style={{ scale: '3' }} />

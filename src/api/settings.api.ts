@@ -12,7 +12,7 @@ export interface INodes {
 const data: INodes[] = [
   {
     id: 'wavestone_id',
-    label: 'Wavestone',
+    label: 'Authentikator',
     subNodes: [
       {
         id: 'a_id',
